@@ -4,6 +4,7 @@
   }
   h2{
     color: white;
+    font-size: 15px;
   }
   .movie-img {
     background-size: cover;
@@ -13,4 +14,5 @@
     margin-left: auto;
     margin-right: auto;
     background-position: center;
+    overflow-x: scroll;
   }
