@@ -1,7 +1,10 @@
 import { retrieveMovies } from './fetchcalls'
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { connect } from 'react-redux'
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch()
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
@@ -9,11 +12,15 @@ function App() {
       .then(data => {
       console.log(data)
     })
-  },[]);
+  }, []);
+  
+  function handleClick(){
+    console.log('hello')
+  }
 
   return (
     <div>
-      <p>You clicked times</p>
+      <button onClick={handleClick}>You clicked times</button>
     </div>
   );
 }
