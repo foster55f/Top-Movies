@@ -1,6 +1,5 @@
 .movie-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
