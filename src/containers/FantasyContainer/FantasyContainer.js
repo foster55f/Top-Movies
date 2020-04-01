@@ -1,0 +1,28 @@
+import React from 'react';
+import MovieCard from '../../components/MovieCard/MovieCard';
+import { useSelector } from 'react-redux';
+import './FantasyContainer.css';
+
+
+const FantasyContainer = () => {
+  const { movies } = useSelector(state => state);
+  const displayFantasyMovies = movies.filter(movie => movie.Genre.indexOf("Fantasy") != -1);
+  const fantasyMovies = displayFantasyMovies.map((film,index) => {
+    return (
+      <MovieCard
+      key={index}
+      id= {index}
+      Title={film.Title}
+      Poster={film.Poster} 
+      />
+    )
+  });
+  
+  return (
+    <div className='movie-container' >       
+      {fantasyMovies}
+    </div>
+  )
+}
+
+export default FantasyContainer
