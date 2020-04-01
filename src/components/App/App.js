@@ -6,6 +6,7 @@ import './App.css';
 import MovieContainer2019 from '../../containers/MovieContainer2019/MovieContainer2019';
 import MovieContainer2018 from '../../containers/MovieContainer2018/MovieContainer2018';
 import ActionContainer from '../../containers/ActionContainer/ActionContainer';
+import MysteryDramaContainer from '../../containers/MysteryDramaContainer/MysteryDramaContainer';
 
 
 const App = () => {
@@ -17,10 +18,6 @@ const App = () => {
         dispatch(addMovies(movies))
     })
   }, []);
-  
-  function handleClick(){
-    console.log('hello')
-  }
 
   return (
     <>
@@ -29,6 +26,9 @@ const App = () => {
       </div>
       <div className='movies2018'>
       <MovieContainer2018 />
+      </div>
+      <div className='actionMovies'>
+      <MysteryDramaContainer />
       </div>
       <div className='actionMovies'>
       <ActionContainer />
