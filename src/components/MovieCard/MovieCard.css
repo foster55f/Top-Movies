@@ -1,6 +1,8 @@
 .movie-card {
     background-color: black;
     margin: 35px;
+    padding:5px;
+
   }
   h2{
     color: white;

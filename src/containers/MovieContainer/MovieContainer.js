@@ -5,14 +5,16 @@ import { useSelector } from 'react-redux';
 import './MovieContainer.css';
 
 
-export const MovieContainer = () => {
+const MovieContainer = () => {
   const { movies } = useSelector(state => state);
+  
   return (
-    <div className='movie-container'>
-      {movies.map(film => {
+    <div className='movie-container' >
+      {movies.map((film, index) => {
         return (
           <MovieCard
-            id= {film.imdbID}
+            key={index}
+            id= {index}
             Title={film.Title}
             Year={film.Year}
             Rated={film.Rated}
@@ -27,7 +29,7 @@ export const MovieContainer = () => {
             Country={film.Country}
             Awards={film.Awards}
             Poster={film.Poster}            
-          />
+            />
         )
       })}
     </div>
