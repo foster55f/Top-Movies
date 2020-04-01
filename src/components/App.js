@@ -1,15 +1,13 @@
-import { retrieveMovies } from './fetchcalls'
+import { retrieveMovies } from '../fetchcalls'
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addMovies } from './actioncreators';
+import { addMovies } from '../actioncreators';
 import './App.css';
-import { connect } from 'react-redux'
-import MovieContainer from './MovieContainer';
+import MovieContainer from '../containers/MovieContainer';
 
 const App = () => {
   const dispatch = useDispatch()
 
-  // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     retrieveMovies('http://localhost:4000/api/movies')
       .then(movies => {

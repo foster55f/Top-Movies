@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import MovieCard from './MovieCard';
+import MovieCard from '../components/MovieCard';
 import { useSelector } from 'react-redux';
 import './MovieContainer.css';
 
