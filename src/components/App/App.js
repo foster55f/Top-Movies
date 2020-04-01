@@ -1,9 +1,9 @@
-import { retrieveMovies } from '../fetchcalls'
+import { retrieveMovies } from '../../fetchcalls'
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addMovies } from '../actioncreators';
+import { addMovies } from '../../actioncreators';
 import './App.css';
-import MovieContainer from '../containers/MovieContainer';
+import MovieContainer from '../../containers/MovieContainer/MovieContainer';
 
 const App = () => {
   const dispatch = useDispatch()

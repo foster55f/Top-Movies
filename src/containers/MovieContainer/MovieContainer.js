@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import MovieCard from '../components/MovieCard';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import { useSelector } from 'react-redux';
 import './MovieContainer.css';
 
@@ -12,6 +12,7 @@ export const MovieContainer = () => {
       {movies.map(film => {
         return (
           <MovieCard
+            id= {film.imdbID}
             Title={film.Title}
             Year={film.Year}
             Rated={film.Rated}
