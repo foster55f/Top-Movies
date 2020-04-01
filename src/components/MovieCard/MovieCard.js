@@ -1,7 +1,7 @@
 import React from 'react';
 import './MovieCard.css';
 
-export const MovieCard = ({id, Title, Poster }) => {
+export const MovieCard = ({id, Poster }) => {
   
   const findId = (event)=> {
     console.log(event)
@@ -9,8 +9,7 @@ export const MovieCard = ({id, Title, Poster }) => {
 
 
   return (
-    <div className='movie-card' id={id} onClick={event => findId(event.target.id)}>
-      <h2 id={id}>{Title}</h2>
+    <div className='movie-card' id={id} onClick={event => findId(event.target.id)} >
       <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />
     </div>
   )

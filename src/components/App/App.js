@@ -16,11 +16,50 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    document.addEventListener("keydown", _handleKeyDown);
     retrieveMovies('http://localhost:4000/api/movies')
       .then(movies => {
         dispatch(addMovies(movies))
     })
   }, []);
+
+ const leftArrowPressed = ()=> {
+  console.log("left")
+    
+ }
+ 
+ const rightArrowPressed = () => {
+    console.log("right")
+ }
+  
+ const downArrowPressed = () => {
+  console.log("down")
+ }
+
+ const upArrowPressed = () => {
+  console.log("up")
+}
+ 
+ const _handleKeyDown = (evt) => {
+     evt = evt || window.event;
+     switch (evt.keyCode) {
+         case 37:
+             leftArrowPressed();
+          break;
+       
+         case 38:
+            upArrowPressed();
+          break;
+       
+         case 39:
+            rightArrowPressed();
+          break;
+       
+         case 40:
+            downArrowPressed();
+          break;
+     }
+ };
 
   return (
     <>
