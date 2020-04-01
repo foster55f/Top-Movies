@@ -1,6 +1,7 @@
 import { retrieveMovies } from './fetchcalls'
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { addMovies } from './actioncreators';
 import { connect } from 'react-redux'
 
 const App = () => {
@@ -9,8 +10,8 @@ const App = () => {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     retrieveMovies('http://localhost:4000/api/movies')
-      .then(data => {
-      console.log(data)
+      .then(movies => {
+        dispatch(addMovies(movies))
     })
   }, []);
   
