@@ -7,6 +7,9 @@ import MovieContainer2019 from '../../containers/MovieContainer2019/MovieContain
 import MovieContainer2018 from '../../containers/MovieContainer2018/MovieContainer2018';
 import ActionContainer from '../../containers/ActionContainer/ActionContainer';
 import MysteryDramaContainer from '../../containers/MysteryDramaContainer/MysteryDramaContainer';
+import ThrillerContainer from '../../containers/ThrillerContainer/ThrillerContainer';
+import FantasyContainer from '../../containers/FantasyContainer/FantasyContainer';
+
 
 
 const App = () => {
@@ -32,6 +35,12 @@ const App = () => {
       </div>
       <div className='actionMovies'>
       <ActionContainer />
+      </div>
+      <div className='actionMovies'>
+      <FantasyContainer />
+      </div>
+      <div className='actionMovies'>
+      <ThrillerContainer />
     </div>
     </>
   );
