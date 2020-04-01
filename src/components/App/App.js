@@ -5,6 +5,7 @@ import { addMovies } from '../../actioncreators';
 import './App.css';
 import MovieContainer2019 from '../../containers/MovieContainer2019/MovieContainer2019';
 import MovieContainer2018 from '../../containers/MovieContainer2018/MovieContainer2018';
+import ActionContainer from '../../containers/ActionContainer/ActionContainer';
 
 
 const App = () => {
@@ -28,6 +29,9 @@ const App = () => {
       </div>
       <div className='movies2018'>
       <MovieContainer2018 />
+      </div>
+      <div className='actionMovies'>
+      <ActionContainer />
     </div>
     </>
   );
