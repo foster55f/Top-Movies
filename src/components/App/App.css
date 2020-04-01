@@ -1,14 +1,25 @@
-.App {
-  background-color: #bdbdbdad;
-  height: 100vh;
-  display: flex;
-  overflow: auto;
+html {
+  overflow: hidden;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  height: 100%;
+  overflow: auto;
 }
+.movies2019, .movies2018 {
+  background: #0E0F11;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden; 
+  width: 100%;
+  align-items: center;
+  color: white;
+  justify-content: flex-start
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

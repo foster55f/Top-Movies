@@ -1,13 +1,7 @@
 import React from 'react';
 import './MovieCard.css';
 
-export const MovieCard = ({id, Title,Year,Rated,Released,Runtime,Genre,Director,Writers,
-  Actors,
-  Plot,
-  Language,
-  Country,
-  Awards,
-  Poster }) => {
+export const MovieCard = ({id, Title, Poster }) => {
   
   const findId = (event)=> {
     console.log(event)

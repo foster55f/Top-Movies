@@ -22,11 +22,14 @@ const App = () => {
   }
 
   return (
-    <div className='App'>
-      <button onClick={handleClick}>You clicked times</button>
+    <>
+    <div className='movies2019'>
       <MovieContainer2019 />
+      </div>
+      <div className='movies2018'>
       <MovieContainer2018 />
     </div>
+    </>
   );
 }
 
