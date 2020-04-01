@@ -1,5 +1,7 @@
 .movie-container {
     display: flex;
     text-align: center;
-    overflow: scroll
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
   }

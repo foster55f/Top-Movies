@@ -1,6 +1,6 @@
 .movie-container {
     display: flex;
     text-align: center;
-    overflow: auto;
+    overflow: auto; 
     white-space: nowrap;
 }

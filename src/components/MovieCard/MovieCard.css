@@ -1,8 +1,10 @@
 .movie-card {
     background-color: black;
     margin: 15px;
-    height: 50vh;
+    height: 45vh;
     width: 40vh;
+    height: fit-content
+
   }
   h2{
     color: white;
@@ -10,7 +12,7 @@
   }
   .movie-img {
     background-size: cover;
-    height: 40vh;
+    height: 60vh;
     background-repeat: no-repeat;
     width: 20vw;
     margin-left: auto;
