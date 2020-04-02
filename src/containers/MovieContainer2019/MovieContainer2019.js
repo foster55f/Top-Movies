@@ -8,11 +8,16 @@ import './MovieContainer2019.css';
 const MovieContainer2019 = () => {
   const { movies } = useSelector(state => state);
   const displayTopMovies2019 = movies.filter(movie => movie.Year === '2019')
+
+  const findingId = (Id) => {
+    console.log(Id)
+  }
   const movies2019 = displayTopMovies2019.map((film,index) => {
     return (
       <MovieCard
+      findingId ={findingId}
       key={index}
-      id= {index}
+      id= {film.imdbID}
       Title={film.Title}
       Year={film.Year}
       Rated={film.Rated}
