@@ -34,16 +34,14 @@ const MovieCard = ({ id, Poster, character, focus, index, setFocus }) => {
 
   return (
     <div>
-    <li
-    tabIndex={focus ? 0 : -1}
-    role="button"
-    ref={ref}
-    onClick={handleSelect}
-    onKeyPress={handleSelect}
-  >
-    {character}
-  </li>
-    <button className='movie-card' tabIndex="0" id={id} onClick={event => findId(event.target.id)} ref={ref} >
+      <button className='movie-card' tabIndex="0"
+        id={id} onClick={event => findId(event.target.id)}
+        tabIndex={focus ? 0 : -1}
+        role="button"
+        ref={ref}
+        onClick={handleSelect}
+        onKeyPress={handleSelect}
+      >
       <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />
       </button>
     </div>
