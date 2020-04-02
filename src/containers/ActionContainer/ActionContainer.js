@@ -7,12 +7,11 @@ import './ActionContainer.css';
 const ActionContainer = () => {
   const { movies } = useSelector(state => state);
   const displayActionMovies = movies.filter(movie => movie.Genre.indexOf("Action") != -1);
-  console.log(displayActionMovies)
   const actionMovies = displayActionMovies.map((film,index) => {
     return (
       <MovieCard
       key={index}
-      id= {index}
+      id= {film.imdbID}
       Title={film.Title}
       Poster={film.Poster} 
       />
