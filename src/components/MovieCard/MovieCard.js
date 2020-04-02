@@ -5,16 +5,15 @@ import { addId } from '../../actioncreators';
 
 
 
-export const MovieCard = ({id, Poster }) => {
+export const MovieCard = ({id, Poster, key }) => {
   const dispatch = useDispatch()
   const findId = (event) => {
-    console.log(event)
     dispatch(addId(event))
   }
 
 
   return (
-    <div className='movie-card' id={id} onClick={event => findId(event.target.id)} tabIndex="0">
+    <div className='movie-card' tabIndex={key} id={id} onClick={event => findId(event.target.id)} >
       <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />
     </div>
   )
