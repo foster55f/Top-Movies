@@ -11,7 +11,7 @@ const ThrillerContainer = () => {
     return (
       <MovieCard
       key={index}
-      id= {index}
+      id= {film.imdbID}
       Title={film.Title}
       Poster={film.Poster} 
       />
