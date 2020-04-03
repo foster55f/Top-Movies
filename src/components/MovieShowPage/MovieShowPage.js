@@ -47,13 +47,6 @@ constructor() {
             <Link to='/login'>
               <button className='login-button'>LOG IN NOW TO RATE THIS MOVIE</button>
             </Link>}
-          {this.state.show && <RatingModal
-            show={this.show}
-            addRating={this.addRating}
-            submit={this.submitRating}
-            rating={this.state.currentRating}
-            id={this.props.movie.id}
-            />}
         </div>
       </div>
     </section>

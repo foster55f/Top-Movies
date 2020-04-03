@@ -1,4 +1,5 @@
-import { retrieveMovies } from '../../fetchcalls'
+import { retrieveMovies } from '../../fetchcalls';
+import { Route } from 'react-router-dom'
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMovies } from '../../actioncreators';
@@ -9,6 +10,8 @@ import ActionContainer from '../../containers/ActionContainer/ActionContainer';
 import MysteryDramaContainer from '../../containers/MysteryDramaContainer/MysteryDramaContainer';
 import ThrillerContainer from '../../containers/ThrillerContainer/ThrillerContainer';
 import FantasyContainer from '../../containers/FantasyContainer/FantasyContainer';
+import MovieShowPage from '../MovieShowPage/MovieShowPage';
+
 
 
 
@@ -64,7 +67,15 @@ const App = () => {
           <h1>Thriller</h1>
       </div>
       <ThrillerContainer />
-    </div>
+      </div>
+      <Route
+          exact path="/movies/:id" render={({ match }) => {
+            let movie = this.props.movies.find(movie => movie.id === parseInt(match.params.id))
+            return movie &&
+            <>
+              <MovieShowPage movie={movie} />
+            </>
+          }} />
     </>
   );
 }
