@@ -33,21 +33,37 @@ constructor() {
   render() {
     return (
     <section className='movie-show-page'>
-        <button className='favorite-button'>Add Favorite</button>
-      <div className='movie-info-container'>
         <div className='movie-poster' style={{backgroundImage: `url(${this.props.movie.Poster})`}}/>
-        <div className='movie-info-text'>
-          <h2>{this.props.movie.Title.toUpperCase()}</h2>
-          <p>OVERVIEW: {this.props.movie.overview}</p>
-          <p>RELEASE DATE: {this.state.date}</p>
-          {/* <p>AVERAGE RATING: {Math.round(this.props.movie.average_rating)}</p> */}
-            <p>YOUR RATING: {this.state.movieRating}</p> :
-            <button className='rate-button' onClick={this.show}>RATE THIS MOVIE</button> :
-            <Link to='/login'>
-              <button className='login-button'>LOG IN NOW TO RATE THIS MOVIE</button>
-            </Link>}
+        <div>
+        <h1>{this.props.movie.Title}</h1>
+          <div className ='movie-details'>
+            <h2>{this.props.movie.Genre}</h2>
+            <h2>{this.props.movie.Year}</h2>
+            <h2>{this.props.movie.Runtime}</h2>
+            <h2>Rating: {this.props.movie.Rated}</h2>
+          </div>
+          <button>Add Favorite</button>
+          <div>
+            <h3>Plot</h3>
+            <p>{this.props.movie.Plot}</p>  
         </div>
-      </div>
+        <div>
+            <h3>Directed By</h3>
+            <p>{this.props.movie.Director}</p>    
+        </div>
+        <div>
+            <h3>Production</h3>
+            <p>{this.props.movie.Production}</p>    
+        </div>
+        <div>
+            <h3>Starring</h3>
+            <ul>
+      {this.props.movie.Actors.split(' ').map((item,i) => 
+        <li key={i}>{item}</li>
+      )}
+      </ul>
+        </div>
+        </div> 
     </section>
     )
   }

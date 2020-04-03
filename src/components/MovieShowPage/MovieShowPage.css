@@ -17,9 +17,18 @@
   }
 
   .movie-poster {
-    height: 70vh;
-    width: 100%;
+    height: 80vh;
+    width: 20%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  .movie-details {
+      display: flex;
+      flex-direction: row;
+  }
+
+  h2{
+      margin: 5px;
   }
