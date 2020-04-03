@@ -79,14 +79,15 @@ const App = () => {
       )
     }}
   />  
-      <Route
+      {movies && <Route
         exact path="/movies/:movie" render={({ match }) => {
-            let movie = movies.find(movie => movie.Title === match.params.movie)
-            return movie &&
+          let movie = movies.find(movie => movie.Title === match.params.movie)
+          return movie &&
             <>
               <MovieShowPage movie={movie} />
             </>
-          }} />
+        }} />
+      }
     </>
   );
 }

@@ -11,8 +11,8 @@ import { getRatings, postRating } from '../../fetchcalls';
 import './MovieShowPage.css';
 
 
+const MovieShowPage = (props) => {
 
-const MovieShowPage = () => {
   const dispatch = useDispatch()
 
   const pickFavoriteMovies = (id) => {
@@ -37,32 +37,32 @@ const MovieShowPage = () => {
 
     return (
     <section className='movie-show-page'>
-        <div className='movie-poster' style={{backgroundImage: `url(${this.props.movie.Poster})`}}/>
+        <div className='movie-poster' style={{backgroundImage: `url(${props.movie.Poster})`}}/>
         <div>
-        <h1>{this.props.movie.Title}</h1>
+        <h1>{props.movie.Title}</h1>
           <div className ='movie-details'>
-            <h2>{this.props.movie.Genre}</h2>
-            <h2>{this.props.movie.Year}</h2>
-            <h2>{this.props.movie.Runtime}</h2>
-            <h2>Rating: {this.props.movie.Rated}</h2>
+            <h2>{props.movie.Genre}</h2>
+            <h2>{props.movie.Year}</h2>
+            <h2>{props.movie.Runtime}</h2>
+            <h2>Rating: {props.movie.Rated}</h2>
           </div>
-          <button id={this.props.title} onClick={event => pickFavoriteMovies(event.target.id)}>Add Favorite</button>
+          <button id={props.title} onClick={event => pickFavoriteMovies(event.target.id)}>Add Favorite</button>
           <div>
             <h3>Plot</h3>
-            <p>{this.props.movie.Plot}</p>  
+            <p>{props.movie.Plot}</p>  
         </div>
         <div>
             <h3>Directed By</h3>
-            <p>{this.props.movie.Director}</p>    
+            <p>{props.movie.Director}</p>    
         </div>
         <div>
             <h3>Production</h3>
-            <p>{this.props.movie.Production}</p>    
+            <p>{props.movie.Production}</p>    
         </div>
         <div>
             <h3>Starring</h3>
             <ul>
-      {this.props.movie.Actors.split(' ').map((item,i) => 
+      {props.movie.Actors.split(' ').map((item,i) => 
         <li key={i}>{item}</li>
       )}
       </ul>
