@@ -12,7 +12,7 @@ const MovieCard = ({ id, Poster, character, focus, index, setFocus }) => {
   const dispatch = useDispatch()
   const ref = useRef(null);
   
-  useFocusOnKeyDown(ref);
+  // useFocusOnKeyDown(ref);
 
   useEffect(() => {
     if (focus) {

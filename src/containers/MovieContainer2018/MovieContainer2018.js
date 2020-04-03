@@ -6,6 +6,7 @@ import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
 
 
 
+
 const MovieContainer2018 = () => {
   const { movies } = useSelector(state => state);
   const displayTopMovies2018 = movies.filter(movie => movie.Year === '2018')
@@ -17,7 +18,7 @@ const MovieContainer2018 = () => {
       key={film.Title}
       setFocus={setFocus}
       index={index}
-      focus={focus === index}
+      // focus={focus === index}
       character={film.Title}
       key={index}
       id= {film.imdbID}
