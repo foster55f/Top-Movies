@@ -9,7 +9,7 @@ import { withRouter } from 'react-router-dom';
 
 
 
-const MovieCard = ({ id, Poster, character, focus, index, setFocus, history }) => {
+const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history }) => {
   const dispatch = useDispatch()
   const ref = useRef(null);
   
@@ -23,7 +23,7 @@ const MovieCard = ({ id, Poster, character, focus, index, setFocus, history }) =
   }, [focus]);
 
   const handleSelect = useCallback(() => {
-    history.push(`/${character}`)
+    history.push(`/movies/${Title}`)
     // setting focus to that element when it is selected
     setFocus(index);
   }, [character, index, setFocus]);
