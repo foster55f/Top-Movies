@@ -16,7 +16,7 @@ const ThrillerContainer = () => {
       key={film.Title}
       setFocus={setFocus}
       index={index}
-      focus={focus === index}
+      // focus={focus === index}
       character={film.Title}
       key={index}
       id= {film.imdbID}

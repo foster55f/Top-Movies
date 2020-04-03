@@ -6,6 +6,7 @@ import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
 
 
 
+
 const ActionContainer = () => {
   const { movies } = useSelector(state => state);
   const displayActionMovies = movies.filter(movie => movie.Genre.indexOf("Action") != -1);
@@ -16,7 +17,7 @@ const ActionContainer = () => {
       key={film.Title}
       setFocus={setFocus}
       index={index}
-      focus={focus === index}
+      // focus={focus === index}
       character={film.Title}
       key={index}
       id= {film.imdbID}
