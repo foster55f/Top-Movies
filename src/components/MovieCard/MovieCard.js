@@ -3,12 +3,13 @@ import { useDispatch } from 'react-redux';
 import { addId } from '../../actioncreators';
 import useFocusOnKeyDown from 'react-focus-onkeydown';
 import React, { useEffect, useRef, useCallback } from "react";
+import { withRouter } from 'react-router-dom';
 
 
 
 
 
-const MovieCard = ({ id, Poster, character, focus, index, setFocus }) => {
+const MovieCard = ({ id, Poster, character, focus, index, setFocus, history }) => {
   const dispatch = useDispatch()
   const ref = useRef(null);
   
@@ -22,7 +23,7 @@ const MovieCard = ({ id, Poster, character, focus, index, setFocus }) => {
   }, [focus]);
 
   const handleSelect = useCallback(() => {
-    alert(`${character}`);
+    history.push(`/${character}`)
     // setting focus to that element when it is selected
     setFocus(index);
   }, [character, index, setFocus]);
@@ -50,7 +51,7 @@ const MovieCard = ({ id, Poster, character, focus, index, setFocus }) => {
 }
 
 
-export default MovieCard;
+export default (withRouter(MovieCard))
 
 
 
