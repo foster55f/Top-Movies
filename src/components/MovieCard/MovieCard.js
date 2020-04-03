@@ -1,17 +1,21 @@
 import './MovieCard.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addId } from '../../actioncreators';
 import useFocusOnKeyDown from 'react-focus-onkeydown';
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback,useState } from "react";
 import { withRouter } from 'react-router-dom';
+import Demo from '../HeartCheckbox/HeartCheckBox';
 
 
 
 
 
-const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history }) => {
+
+const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history, isAFavorite }) => {
   const dispatch = useDispatch()
   const ref = useRef(null);
+  
+  
   
   // useFocusOnKeyDown(ref);
 
@@ -33,8 +37,10 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
     dispatch(addId(event))
   }
 
+
   return (
     <div>
+      <Demo checked={isAFavorite} />
       <button className='movie-card' tabIndex="0"
         id={id} onClick={event => findId(event.target.id)}
         tabIndex={focus ? 0 : -1}
@@ -43,7 +49,7 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
         onClick={handleSelect}
         onKeyPress={handleSelect}
       >
-      <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />
+        <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />        
       </button>
     </div>
     

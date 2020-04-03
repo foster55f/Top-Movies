@@ -15,6 +15,8 @@ import MovieShowPage from '../MovieShowPage/MovieShowPage';
 
 
 
+
+
 const App = () => {
   const dispatch = useDispatch();
   const { movies } = useSelector(state => state);
@@ -42,7 +44,7 @@ const App = () => {
           <div className='movies2019'>
         <div>
           <h1>Top Movies 2019</h1>
-        </div>
+            </div>
         <MovieContainer2019 />
       </div>
       <div className='movies2018'>
