@@ -18,11 +18,11 @@ class Demo extends React.Component {
     const { checked } = this.state;
  
     return (
-        <>
+        <div className ='heart-container'>
         {this.props.checked &&
             <HeartCheckbox checked={this.props.checked} onClick={this.onClick} />
         }
-        </>
+        </div>
     );
   }
 }

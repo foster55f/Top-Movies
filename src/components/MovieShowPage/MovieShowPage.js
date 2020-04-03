@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavoriteMovies } from '../../actioncreators';
+import EscapeListen from '../EscapeListen/EscapeListen';
+
 
 import './MovieShowPage.css';
 
