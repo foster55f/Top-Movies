@@ -30,21 +30,39 @@ const App = () => {
   return (
     <>
       <div className='movies2019'>
-      <MovieContainer2019 />
+        <div>
+          <h1>Top Movies 2019</h1>
+        </div>
+        <MovieContainer2019 />
       </div>
       <div className='movies2018'>
-      <MovieContainer2018 />
+      <div>
+          <h1>Top Movies 2018</h1>
+      </div>
+        <MovieContainer2018 />
       </div>
       <div className='actionMovies'>
-      <MysteryDramaContainer />
+      <div>
+          <h1>Mystery/Drama</h1>
+      </div>
+        <MysteryDramaContainer />
       </div>
       <div className='actionMovies'>
+      <div>
+          <h1>Action</h1>
+      </div>
       <ActionContainer />
       </div>
       <div className='actionMovies'>
+      <div>
+          <h1>Fantasy</h1>
+      </div>
       <FantasyContainer />
       </div>
       <div className='actionMovies'>
+      <div>
+          <h1>Thriller</h1>
+      </div>
       <ThrillerContainer />
     </div>
     </>

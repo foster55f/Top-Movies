@@ -50,7 +50,6 @@ const MovieCard = ({ id, Poster, character, focus, index, setFocus }) => {
 }
 
 
-
 export default MovieCard;
 
 
