@@ -9,24 +9,31 @@ import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
 
 const MovieContainer2019 = () => {
   const { movies } = useSelector(state => state);
+  const { favoriteMovies } = useSelector(state => state);
+
   const displayTopMovies2019 = movies.filter(movie => movie.Year === '2019');
+  // const isAFavoriteMovie = favoriteMovies.filter(film => {
+  //   console.log(film.imdbID === id)
+  //   return film.imdbID === id;
+  // })
   const [focus, setFocus] = useRoveFocus(displayTopMovies2019.length);
 
 
  
-  const movies2019 = displayTopMovies2019.map((film,index) => {
+  const movies2019 = displayTopMovies2019.map((film, index) => {
     return (
       <MovieCard
-      key={film.Title}
-      setFocus={setFocus}
-      index={index}
-      focus={focus === index}
-      character={film.Title}
-      key={index}
-      id= {film.imdbID}
-      Title={film.Title}
-      Year={film.Year}
-      Rated={film.Rated}
+        key={film.Title}
+        isAFavorite ={favoriteMovies.includes(film)}
+        setFocus={setFocus}
+        index={index}
+        focus={focus === index}
+        character={film.Title}
+        key={index}
+        id= {film.imdbID}
+        Title={film.Title}
+        Year={film.Year}
+        Rated={film.Rated}
       Released={film.Released}
       Runtime={film.Runtime}
       Genre={film.Genre}
