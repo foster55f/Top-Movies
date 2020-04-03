@@ -6,11 +6,9 @@ const useRoveFocus=(size)=> {
   const handleKeyDown = useCallback(
     e => {
       if (e.keyCode === 39) {
-        // Down arrow
         e.preventDefault();
         setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1);
       } else if (e.keyCode === 37) {
-        // Up arrow
         e.preventDefault();
         setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1);
       }
