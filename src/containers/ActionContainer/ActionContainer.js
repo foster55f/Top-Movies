@@ -2,17 +2,24 @@ import React from 'react';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { useSelector } from 'react-redux';
 import './ActionContainer.css';
+import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
+
 
 
 const ActionContainer = () => {
   const { movies } = useSelector(state => state);
   const displayActionMovies = movies.filter(movie => movie.Genre.indexOf("Action") != -1);
-  console.log(displayActionMovies)
+  const [focus, setFocus] = useRoveFocus(displayActionMovies.length);
   const actionMovies = displayActionMovies.map((film,index) => {
     return (
       <MovieCard
+      key={film.Title}
+      setFocus={setFocus}
+      index={index}
+      focus={focus === index}
+      character={film.Title}
       key={index}
-      id= {index}
+      id= {film.imdbID}
       Title={film.Title}
       Poster={film.Poster} 
       />
