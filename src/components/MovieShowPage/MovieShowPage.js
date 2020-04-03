@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFavoriteMovies } from '../../actioncreators';
 
 
@@ -12,12 +12,12 @@ import './MovieShowPage.css';
 
 
 const MovieShowPage = (props) => {
-
+  const { movies } = useSelector(state => state);
   const dispatch = useDispatch()
 
   const pickFavoriteMovies = (id) => {
-    const favorite = this.props.movies.find(movie => {
-        return movie.Title === id
+    const favorite = movies.find(film => {
+        return film.Title === id
     })
     dispatch(addFavoriteMovies(favorite))
   }
@@ -46,7 +46,7 @@ const MovieShowPage = (props) => {
             <h2>{props.movie.Runtime}</h2>
             <h2>Rating: {props.movie.Rated}</h2>
           </div>
-          <button id={props.title} onClick={event => pickFavoriteMovies(event.target.id)}>Add Favorite</button>
+          <button id={props.movie.Title} onClick={event => pickFavoriteMovies(event.target.id)}>Add Favorite</button>
           <div>
             <h3>Plot</h3>
             <p>{props.movie.Plot}</p>  
