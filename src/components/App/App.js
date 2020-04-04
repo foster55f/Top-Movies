@@ -10,6 +10,8 @@ import ActionContainer from '../../containers/ActionContainer/ActionContainer';
 import MysteryDramaContainer from '../../containers/MysteryDramaContainer/MysteryDramaContainer';
 import ThrillerContainer from '../../containers/ThrillerContainer/ThrillerContainer';
 import FantasyContainer from '../../containers/FantasyContainer/FantasyContainer';
+import FavoritesContainer from '../../containers/FavoritesContainer/FavoritesContainer';
+
 import MovieShowPage from '../MovieShowPage/MovieShowPage';
 
 
@@ -20,6 +22,8 @@ import MovieShowPage from '../MovieShowPage/MovieShowPage';
 const App = () => {
   const dispatch = useDispatch();
   const { movies } = useSelector(state => state);
+  const { favoriteMovies } = useSelector(state => state);
+
 
   
 
@@ -41,42 +45,52 @@ const App = () => {
     render={() => {
       return (
         <>
-          <div className='movies2019'>
-        <div>
+           <div className='header'>
           <h1>Top Movies 2019</h1>
             </div>
+          <div className='movies2019'>
         <MovieContainer2019 />
-      </div>
-      <div className='movies2018'>
-      <div>
+          </div>
+          <div className='header'>
           <h1>Top Movies 2018</h1>
       </div>
+      <div className='movies2018'>
         <MovieContainer2018 />
-      </div>
-      <div className='actionMovies'>
-      <div>
+          </div>
+          <div className='header'>
           <h1>Mystery/Drama</h1>
       </div>
-        <MysteryDramaContainer />
-      </div>
       <div className='actionMovies'>
-      <div>
+        <MysteryDramaContainer />
+          </div>
+        <div className='header'>
           <h1>Action</h1>
       </div>
-      <ActionContainer />
-      </div>
       <div className='actionMovies'>
-      <div>
+      <ActionContainer />
+          </div>
+          <div className='header'>
           <h1>Fantasy</h1>
       </div>
-      <FantasyContainer />
-      </div>
       <div className='actionMovies'>
-      <div>
+      <FantasyContainer />
+          </div>
+          <div className='header'>
           <h1>Thriller</h1>
       </div>
+      <div className='actionMovies'>
       <ThrillerContainer />
-      </div>
+          </div>
+          {favoriteMovies.length > 0 &&
+            <>
+             <div className='header'>
+             <h1>Your Favorites</h1>
+           </div>
+            <div className='favoriteMovies'>
+              <FavoritesContainer />
+            </div>
+            </>
+          }
         </>
       )
     }}

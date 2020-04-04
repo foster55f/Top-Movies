@@ -4,7 +4,7 @@ import { addId } from '../../actioncreators';
 import useFocusOnKeyDown from 'react-focus-onkeydown';
 import React, { useEffect, useRef, useCallback} from "react";
 import { withRouter } from 'react-router-dom';
-import Demo from '../HeartCheckbox/HeartCheckBox';
+import Heart from '../HeartCheckbox/HeartCheckBox';
 
 
 
@@ -33,16 +33,10 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
   }, [character, index, setFocus]);
 
 
-  const findId = (event) => {
-    dispatch(addId(event))
-  }
-
-
   return (
     <div >
-      <Demo checked={isAFavorite}   />
       <button className='movie-card' tabIndex="0"
-        id={id} onClick={event => findId(event.target.id)}
+        id={id} 
         tabIndex={focus ? 0 : -1}
         role="button"
         ref={ref}
@@ -50,7 +44,8 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
         onKeyPress={handleSelect}
       >
         <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />        
-        </button>
+      </button>
+      <Heart checked={isAFavorite}   />      
     </div>
     
   )

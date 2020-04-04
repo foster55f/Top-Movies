@@ -8,13 +8,15 @@ import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
 
 const FantasyContainer = () => {
   const { movies } = useSelector(state => state);
+  const { favoriteMovies } = useSelector(state => state);
   const displayFantasyMovies = movies.filter(movie => movie.Genre.indexOf("Fantasy") != -1);
   const [focus, setFocus] = useRoveFocus(displayFantasyMovies.length);
 
   const fantasyMovies = displayFantasyMovies.map((film,index) => {
     return (
       <MovieCard
-      key={film.Title}
+        key={film.Title}
+        isAFavorite ={favoriteMovies.includes(film)}
       setFocus={setFocus}
       index={index}
       // focus={focus === index}

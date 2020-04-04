@@ -12,6 +12,10 @@ const useRoveFocus=(size)=> {
         e.preventDefault();
         setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1);
       }
+      else if (e.keyCode === 40) {
+        e.preventDefault();
+        setCurrentFocus(8);
+      }
     },
     [size, currentFocus, setCurrentFocus]
   );
