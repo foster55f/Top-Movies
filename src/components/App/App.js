@@ -45,49 +45,51 @@ const App = () => {
     render={() => {
       return (
         <>
-          <div className='movies2019'>
-        <div>
+           <div className='header'>
           <h1>Top Movies 2019</h1>
             </div>
+          <div className='movies2019'>
         <MovieContainer2019 />
-      </div>
-      <div className='movies2018'>
-      <div>
+          </div>
+          <div className='header'>
           <h1>Top Movies 2018</h1>
       </div>
+      <div className='movies2018'>
         <MovieContainer2018 />
-      </div>
-      <div className='actionMovies'>
-      <div>
+          </div>
+          <div className='header'>
           <h1>Mystery/Drama</h1>
       </div>
-        <MysteryDramaContainer />
-      </div>
       <div className='actionMovies'>
-      <div>
+        <MysteryDramaContainer />
+          </div>
+        <div className='header'>
           <h1>Action</h1>
       </div>
-      <ActionContainer />
-      </div>
       <div className='actionMovies'>
-      <div>
+      <ActionContainer />
+          </div>
+          <div className='header'>
           <h1>Fantasy</h1>
       </div>
-      <FantasyContainer />
-      </div>
       <div className='actionMovies'>
-      <div>
+      <FantasyContainer />
+          </div>
+          <div className='header'>
           <h1>Thriller</h1>
       </div>
+      <div className='actionMovies'>
       <ThrillerContainer />
           </div>
           {favoriteMovies.length > 0 &&
+            <>
+             <div className='header'>
+             <h1>Your Favorites</h1>
+           </div>
             <div className='favoriteMovies'>
-              <div>
-                <h1>Your Favorites</h1>
-              </div>
               <FavoritesContainer />
             </div>
+            </>
           }
         </>
       )

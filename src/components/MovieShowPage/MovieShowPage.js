@@ -50,26 +50,18 @@ const MovieShowPage = (props) => {
             <button id={props.movie.Title}
               onClick={event => removeFavorite(event.target.id)}>Remove Favorite</button>
           }
-          <div className='plot-container'>
             <h3>Plot</h3>
             <p>{props.movie.Plot}</p>  
-        </div>
-        <div>
             <h3>Directed By</h3>
             <p>{props.movie.Director}</p>    
-        </div>
-        <div>
             <h3>Production</h3>
             <p>{props.movie.Production}</p>    
-        </div>
-        <div>
             <h3>Starring</h3>
             <ul>
       {props.movie.Actors.split(',').map((item,i) => 
         <li key={i}>{item}</li>
       )}
       </ul>
-        </div>
         </div> 
     </section>
     )

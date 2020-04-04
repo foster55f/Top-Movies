@@ -6,6 +6,14 @@ html {
 body {
   height: 100%;
   overflow: auto;
+  background: #0E0F11;
+}
+
+.header{
+  background: #0E0F11;
+  color: white;
+  text-align: center;
+  height: 2vh;
 }
 .movies2019, .movies2018, .actionMovies, .favoriteMovies {
   background: #0E0F11;
