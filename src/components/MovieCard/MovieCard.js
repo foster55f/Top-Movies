@@ -33,16 +33,11 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
   }, [character, index, setFocus]);
 
 
-  const findId = (event) => {
-    dispatch(addId(event))
-  }
-
-
   return (
     <div >
       <Heart checked={isAFavorite}   />
       <button className='movie-card' tabIndex="0"
-        id={id} onClick={event => findId(event.target.id)}
+        id={id} 
         tabIndex={focus ? 0 : -1}
         role="button"
         ref={ref}

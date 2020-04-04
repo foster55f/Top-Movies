@@ -3,11 +3,6 @@ export const addMovies = movies => ({
     movies
 });
   
-export const addId = id => ({
-  type: 'FIND_ID',
-  id
-});
-
 export const addFavoriteMovies = favoriteMovies => ({
   type: 'FAVORITE_MOVIES',
   favoriteMovies
