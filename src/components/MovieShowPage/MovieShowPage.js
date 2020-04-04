@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavoriteMovies, removeFavoriteMovies } from '../../actioncreators';
-import EscapeListen from '../EscapeListen/EscapeListen';
+import EscapeListen from "../../components/EscapeListen/EscapeListen";
 import './MovieShowPage.css';
+import { withRouter } from 'react-router-dom';
+
 
 
 const MovieShowPage = (props) => {
-
   const { movies } = useSelector(state => state);
   const { favoriteMovies} = useSelector(state => state);
   const dispatch = useDispatch();
@@ -29,6 +30,12 @@ const MovieShowPage = (props) => {
     })
     dispatch(removeFavoriteMovies(favorite))
   }
+
+  const keyPressed =(event)=> {
+    if (event.key === "Enter") {
+      console.log('hello')
+    }
+  }
   
 
     return (
@@ -45,7 +52,9 @@ const MovieShowPage = (props) => {
           </div>
           {!hasBeenFavorited &&
             <button id={props.movie.Title}
-              onClick={event => pickFavoriteMovies(event.target.id)}>Add Favorite</button>
+              onClick={event => pickFavoriteMovies(event.target.id)}
+              onKeyPress={keyPressed}
+            >Add Favorite</button>
           }
           {hasBeenFavorited &&
             <button id={props.movie.Title}
@@ -67,10 +76,11 @@ const MovieShowPage = (props) => {
             </ul>
             </div>
         </div> 
-    </section>
+      <EscapeListen />
+      </section>
     )
 }
 
 
-export default MovieShowPage;
+export default withRouter(MovieShowPage);
 
