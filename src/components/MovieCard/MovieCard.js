@@ -35,7 +35,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
 
   return (
     <div >
-      <Heart checked={isAFavorite}   />
       <button className='movie-card' tabIndex="0"
         id={id} 
         tabIndex={focus ? 0 : -1}
@@ -45,7 +44,8 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
         onKeyPress={handleSelect}
       >
         <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />        
-        </button>
+      </button>
+      <Heart checked={isAFavorite}   />      
     </div>
     
   )

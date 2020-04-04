@@ -24,8 +24,11 @@
     position: absolute;
   } */
   .heart-container {
-    position: absolute;
+    /* position: absolute;
     background-position: center;
-    padding: 60px;
+    padding: 60px; */
+    float: right;
+    margin-top: -100px;
+    margin-right: 50px;
   }
   
