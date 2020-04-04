@@ -1,6 +1,5 @@
 import './MovieCard.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addId } from '../../actioncreators';
 import useFocusOnKeyDown from 'react-focus-onkeydown';
 import React, { useEffect, useRef, useCallback} from "react";
 import { withRouter } from 'react-router-dom';
@@ -8,13 +7,9 @@ import Heart from '../HeartCheckbox/HeartCheckBox';
 
 
 
-
-
-
 const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history, isAFavorite }) => {
   const dispatch = useDispatch()
   const ref = useRef(null);
-  
   
   
   // useFocusOnKeyDown(ref);
