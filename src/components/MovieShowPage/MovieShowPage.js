@@ -17,14 +17,12 @@ const MovieShowPage = (props, history) => {
 
   useEffect(() => {
     const handleKeyPress = (event) => {
-      console.log(event)
       setCurrentKey(event.keyCode);
       if(event.keyCode === 27) {
         props.history.push("/")
       }
     }
     document.addEventListener('keydown', handleKeyPress);
-    // Specify how to clean up after this effect:
     return function cleanup() {
       document.removeEventListener('keydown', handleKeyPress);
     };

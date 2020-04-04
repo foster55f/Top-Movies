@@ -11,11 +11,7 @@ import MysteryDramaContainer from '../../containers/MysteryDramaContainer/Myster
 import ThrillerContainer from '../../containers/ThrillerContainer/ThrillerContainer';
 import FantasyContainer from '../../containers/FantasyContainer/FantasyContainer';
 import FavoritesContainer from '../../containers/FavoritesContainer/FavoritesContainer';
-
 import MovieShowPage from '../MovieShowPage/MovieShowPage';
-
-
-
 
 
 
@@ -25,8 +21,6 @@ const App = () => {
   const { favoriteMovies } = useSelector(state => state);
 
 
-  
-
   useEffect(() => {
     retrieveMovies('http://localhost:4000/api/movies')
       .then(movies => {
@@ -34,10 +28,7 @@ const App = () => {
     })
   }, []);
 
- 
- 
-
-
+  
   return (
     <>
     <Route
