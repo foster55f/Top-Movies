@@ -10,12 +10,7 @@ import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
 const MovieContainer2019 = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
-
   const displayTopMovies2019 = movies.filter(movie => movie.Year === '2019');
-  // const isAFavoriteMovie = favoriteMovies.filter(film => {
-  //   console.log(film.imdbID === id)
-  //   return film.imdbID === id;
-  // })
   const [focus, setFocus] = useRoveFocus(displayTopMovies2019.length);
 
 

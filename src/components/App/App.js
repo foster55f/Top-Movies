@@ -10,6 +10,8 @@ import ActionContainer from '../../containers/ActionContainer/ActionContainer';
 import MysteryDramaContainer from '../../containers/MysteryDramaContainer/MysteryDramaContainer';
 import ThrillerContainer from '../../containers/ThrillerContainer/ThrillerContainer';
 import FantasyContainer from '../../containers/FantasyContainer/FantasyContainer';
+import FavoritesContainer from '../../containers/FavoritesContainer/FavoritesContainer';
+
 import MovieShowPage from '../MovieShowPage/MovieShowPage';
 
 
@@ -20,6 +22,8 @@ import MovieShowPage from '../MovieShowPage/MovieShowPage';
 const App = () => {
   const dispatch = useDispatch();
   const { movies } = useSelector(state => state);
+  const { favoriteMovies } = useSelector(state => state);
+
 
   
 
@@ -76,7 +80,15 @@ const App = () => {
           <h1>Thriller</h1>
       </div>
       <ThrillerContainer />
-      </div>
+          </div>
+          {favoriteMovies.length > 0 &&
+            <div className='favoriteMovies'>
+              <div>
+                <h1>Your Favorites</h1>
+              </div>
+              <FavoritesContainer />
+            </div>
+          }
         </>
       )
     }}
