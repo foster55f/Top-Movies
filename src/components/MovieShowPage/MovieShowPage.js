@@ -36,19 +36,15 @@ const MovieShowPage = (props) => {
 
 
     return (
-    <section className='movie-show-page'>
-        <div className='movie-poster' style={{backgroundImage: `url(${props.movie.Poster})`}}/>
-        <div className='movie-detail-container'>
-          <div className='top-movie-details'>
+    <div className='movie-show-page'>
+        <div className='movie-poster' style={{ backgroundImage: `url(${props.movie.Poster})` }} />
+        <div>
             <h1>{props.movie.Title}</h1>
-            
             <h2>{props.movie.imdbRating}&#9733;</h2>
-          <div className ='movie-details'>
             <h2>{props.movie.Genre}</h2>
             <h2>{props.movie.Year}</h2>
             <h2>{props.movie.Runtime}</h2>
             <h2>Rating: {props.movie.Rated}</h2>
-          </div>
           {!hasBeenFavorited &&
             <button id={props.movie.Title}
               onKeyPress={event => this.handleKeyPress(event)}
@@ -60,12 +56,11 @@ const MovieShowPage = (props) => {
             >Remove Favorite</button>
               
             }
-            </div>
             <h3>Plot</h3>
             <p>{props.movie.Plot}</p>  
-            <h3>Directed By</h3>
+            <h3>Directed by:</h3>
             <p>{props.movie.Director}</p>    
-            <h3>Production</h3>
+            <h3>Production:</h3>
             <p>{props.movie.Production}</p>    
           <h3>Starring</h3>
           <div>
@@ -74,9 +69,9 @@ const MovieShowPage = (props) => {
         <li key={i}>{item}</li>
       )}
             </ul>
-            </div>
-        </div> 
-      </section>
+          </div>
+          </div>
+      </div>
     )
 }
 
