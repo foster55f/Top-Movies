@@ -13,7 +13,7 @@ const ThrillerContainer = () => {
   const { favoriteMovies } = useSelector(state => state);
   const displayThrillerMovies = movies.filter(movie => movie.Genre.indexOf("Thriller") != -1);
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayThrillerMovies.length);
-  const [containerNumber] = useState(5);
+  const [containernumber] = useState(5);
 
 
  
@@ -22,7 +22,7 @@ const ThrillerContainer = () => {
     return (
       <MovieCard
         key={film.Title}
-        containerNumber={containerNumber}
+        containernumber={containernumber}
         containerFocus={currentFocus}
         isAFavorite ={favoriteMovies.includes(film)}        
       setFocus={setCurrentFocus}

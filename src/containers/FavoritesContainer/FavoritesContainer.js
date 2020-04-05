@@ -11,14 +11,14 @@ import React, { useState} from "react";
 const FavoritesContainer = () => {
   const { favoriteMovies } = useSelector(state => state);
   const [currentFocus, setCurrentFocus] = useRoveFocus(favoriteMovies.length);
-  const [containerNumber] = useState(6);
+  const [containernumber] = useState(6);
 
 
   const favorites = favoriteMovies.map((film,index) => {
     return (
       <MovieCard
         key={film.Title}
-        containerNumber={containerNumber}
+        containernumber={containernumber}
         containerFocus={currentFocus}
       setFocus={setCurrentFocus}
       index={index}

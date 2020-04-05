@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 
 
-const useRoveFocus = (size, movieContainerState) => {
+const useRoveFocus = (size) => {
 const { favoriteMovies } = useSelector(state => state);  
   const [currentFocus, setCurrentFocus] = useState({
     'leftRight': 0,
