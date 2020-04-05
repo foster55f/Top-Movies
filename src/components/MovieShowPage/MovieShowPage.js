@@ -40,7 +40,9 @@ const MovieShowPage = (props) => {
         <div className='movie-poster' style={{backgroundImage: `url(${props.movie.Poster})`}}/>
         <div className='movie-detail-container'>
           <div className='top-movie-details'>
-        <h1>{props.movie.Title}</h1>
+            <h1>{props.movie.Title}</h1>
+            
+            <h2>{props.movie.imdbRating}*</h2>
           <div className ='movie-details'>
             <h2>{props.movie.Genre}</h2>
             <h2>{props.movie.Year}</h2>

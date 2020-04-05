@@ -15,14 +15,14 @@ const { favoriteMovies } = useSelector(state => state);
     e => {
       if (e.keyCode === 39) {
         e.preventDefault();
-        if (currentFocus === size - 1) {
+        if (currentFocus.leftRight === size - 1) {
           setCurrentFocus({...currentFocus, leftRight:0})
         } else {
           setCurrentFocus({...currentFocus, leftRight: currentFocus.leftRight+1})
         }
       } else if (e.keyCode === 37) {
         e.preventDefault();
-        if (currentFocus === 0) {
+        if (currentFocus.leftRight === 0 )  {
           setCurrentFocus({...currentFocus, leftRight:size-1})
         } else {
           setCurrentFocus({...currentFocus, leftRight: currentFocus.leftRight-1})
