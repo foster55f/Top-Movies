@@ -1,6 +1,10 @@
 import { useCallback, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-const useRoveFocus=(size, movieContainerState)=> {
+
+
+const useRoveFocus = (size) => {
+const { favoriteMovies } = useSelector(state => state);  
   const [currentFocus, setCurrentFocus] = useState({
     'leftRight': 0,
     'upDown': 0,     
@@ -25,16 +29,18 @@ const useRoveFocus=(size, movieContainerState)=> {
         }
       } else if (e.keyCode === 40) {
         e.preventDefault();
-        if (currentFocus.upDown === 5) {
+        if(favoriteMovies.length > 0 && currentFocus.upDown===6 || favoriteMovies.length === 0 && currentFocus.upDown === 5 ) {
           setCurrentFocus({leftRight:0, upDown:0},)
         } else {
           setCurrentFocus({leftRight:0, upDown: currentFocus.upDown+1})
         }
       }else if (e.keyCode === 38) {
         e.preventDefault();
-        if (currentFocus.upDown === 0) {
-          setCurrentFocus({leftRight:0  , upDown:5})
-        } else {
+        if (currentFocus.upDown === 0 && favoriteMovies.length === 0) {
+          setCurrentFocus({leftRight: 0, upDown: 5})
+       } else if (currentFocus.upDown === 0 && favoriteMovies.length > 0) {
+          setCurrentFocus({leftRight: 0, upDown: 6})
+       } else {
           setCurrentFocus({leftRight:0, upDown: currentFocus.upDown-1})
         }
       }

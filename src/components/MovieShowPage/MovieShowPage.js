@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 
 
-const MovieShowPage = (props, history) => {
+const MovieShowPage = (props) => {
   const { movies } = useSelector(state => state);
   const [currentKey, setCurrentKey] = useState(null);
   const { favoriteMovies} = useSelector(state => state);
@@ -20,6 +20,13 @@ const MovieShowPage = (props, history) => {
       if(event.keyCode === 27) {
         props.history.push("/")
       }
+      if (event.keyCode === 13 && !favoriteMovies.includes(props.movie)) {
+        setFavorite(true)
+        dispatch(addFavoriteMovies(props.movie))
+      } else if (event.keyCode === 13 && favoriteMovies.includes(props.movie)) {
+        setFavorite(false)
+        dispatch(removeFavoriteMovies(props.movie))
+      }
     }
     document.addEventListener('keydown', handleKeyPress);
     return function cleanup() {
@@ -27,23 +34,6 @@ const MovieShowPage = (props, history) => {
     };
   });
 
-
-  const pickFavoriteMovies = (id) => {
-    setFavorite(true)
-    const favorite = movies.find(film => {
-        return film.Title === id
-    })
-    dispatch(addFavoriteMovies(favorite))
-  }
-
-  const removeFavorite = (id) => {
-    setFavorite(false)
-    const favorite = movies.find(film => {
-        return film.Title === id
-    })
-    dispatch(removeFavoriteMovies(favorite))
-  }
-  
 
     return (
     <section className='movie-show-page'>
@@ -59,13 +49,11 @@ const MovieShowPage = (props, history) => {
           </div>
           {!hasBeenFavorited &&
             <button id={props.movie.Title}
-              onClick={event => pickFavoriteMovies(event.target.id)}
               onKeyPress={event => this.handleKeyPress(event)}
             >Add Favorite</button>
           }
           {hasBeenFavorited &&
             <button id={props.movie.Title}
-              onClick={event => removeFavorite(event.target.id)}
               onKeyPress={event => this.handleKeyPress(event)}
             >Remove Favorite</button>
               

@@ -14,7 +14,7 @@ const FantasyContainer = () => {
   const { favoriteMovies } = useSelector(state => state);
   const displayFantasyMovies = movies.filter(movie => movie.Genre.indexOf("Fantasy") != -1);
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayFantasyMovies.length);
-  const [containerNumber] = useState(4);
+  const [containernumber] = useState(4);
 
 
 
@@ -22,7 +22,7 @@ const FantasyContainer = () => {
     return (
       <MovieCard
         key={film.Title}
-        containerNumber={containerNumber}
+        containernumber={containernumber}
         containerFocus={currentFocus}
         isAFavorite ={favoriteMovies.includes(film)}
       setFocus={setCurrentFocus}

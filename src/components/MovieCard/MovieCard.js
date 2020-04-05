@@ -6,14 +6,14 @@ import Heart from '../HeartCheckbox/HeartCheckBox';
 
 
 
-const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history, isAFavorite, containerNumber, containerFocus }) => {
+const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history, isAFavorite, containernumber, containerFocus }) => {
   const ref = useRef(null);
   
   
   // useFocusOnKeyDown(ref);
 
   useEffect(() => {
-      if (containerFocus.upDown===containerNumber && focus ) {
+      if (containerFocus.upDown===containernumber && focus ) {
       // Move element into view when it is focused
       ref.current.focus();
     }
@@ -31,7 +31,7 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
     <div >
       <button className='movie-card' tabIndex="0"
         id={id} 
-        containerNumber={containerNumber}
+        containernumber={containernumber}
         tabIndex={focus ? 0 : -1}
         role="button"
         ref={ref}

@@ -12,8 +12,8 @@ const MovieContainer2019 = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
   const displayTopMovies2019 = movies.filter(movie => movie.Year === '2019');
-  const [containerNumber] = useState(0);
-  const [currentFocus, setCurrentFocus] = useRoveFocus(displayTopMovies2019.length, containerNumber);
+  const [containernumber] = useState(0);
+  const [currentFocus, setCurrentFocus] = useRoveFocus(displayTopMovies2019.length);
 
 
 
@@ -22,7 +22,7 @@ const MovieContainer2019 = () => {
     return (
       <MovieCard
         key={film.Title}
-        containerNumber={containerNumber}
+        containernumber={containernumber}
         containerFocus={currentFocus}
         isAFavorite ={favoriteMovies.includes(film)}
         setFocus={setCurrentFocus}
