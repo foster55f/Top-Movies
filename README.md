@@ -2,7 +2,7 @@
 
 ## Project Overview:
 
-This was an App done with to enable a user to navigate through a Movies App while only using the Arrow keys left/right and up/down.  Up/Down enables a user to scroll between movie shelves while the left/right keys scroll through individual movies on a specific genre shelf.
+This is an app where users can browse for top movies for the past couple years and genres.  In this ppp a user can navigate through the movies app while only using the arrow keys left/right and up/down.  Up/Down enables a user to scroll between movie shelves while the left/right keys scroll through individual movies on a specific genre shelf.  Once inside a page with movie details, a user can use the Enter button to toggle between favoriting a movie or removing it as a favorite.  A user can then press Escape to leave the movie details page and go back to the movie shelves.  Once a user is back browsing through different movie shelves, the user can see a heart on movie cards that they had favorited.  They will also see a new movie shelf with their favorite movies.
 
 
 ## Setup:
@@ -17,27 +17,55 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ## Wins:
-* This project was quite the learning experience coming from JavaScript to learn this new Java language.  I used CodeAcademy as my main resource in learning.  I also used a Turing classmate as a resource in learning Java since he had done a recent project in Java.  It was enjoyable to use Java's class based lanaguage and continue to build on OOP principles that I have used with JavaScript.
+* This project was really exciting to be able to implement certain features:
 
-* As a user, you are able to add buddies, delete buddies, change an update, delete an update, view your buddies, and view your updates.
+### Home and Navigation
+*  On Home page a user will see the following movie shelves:
+    * Top of 2019
+    * Top of 2018
+    * Mystery Drama
+    * Action
+    * Fantasy
+    * Thriller
+
+* Shelves contain the movie tiles filtered for that shelf criterion
+* Navigation between tiles and between shelves by keyboard arrow keys only
+
+### Feature 1 - Details Page
+* The user can press *ENTER* on a particular movie tile to view more details
+* **Details** page should display the following:
+    * Movie Poster  
+    * Title
+    * IMDB Rating
+    * Genres
+    * Year Released
+    * Duration in minutes
+    * Age Rating
+    * Plot Summary
+    * Director
+    * Production Company
+    * Stars
+* The user can press *ESCAPE* to exit **Details** page
+
+### Feature 2 - Favorites
+* The user can indicate a movie as their favorite
+* With **Details** page, a button in the **Details** page to add / remove favoriten with Enter button
+* A *heart* or *star* on the movie tile to indicate that movie is a favorite
+
+### Feature 3 - Favorite Shelf
+* A shelf with only movies that the user has favorited
+* The shelf only exist if the user has favorite movies
 
 ## Future Iterations:
-* Continuing to add to user experience
-
+* Continuing to add to user experience with UserLogin
+* Add Search capability
 
 ## Working Demo:
 ![Home Page](https://user-images.githubusercontent.com/50148342/78511498-57adee80-775a-11ea-9be7-7cddfe1905d8.gif)
 
-
+![MovieShowPage](https://user-images.githubusercontent.com/50148342/78511821-cd1abe80-775c-11ea-8456-988e4776e832.gif)
 
 ### GitHub:
 
 [Foster Taylor](https://github.com/foster55f/)
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
