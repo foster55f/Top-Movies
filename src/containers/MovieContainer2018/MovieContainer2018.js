@@ -1,8 +1,11 @@
-import React from 'react';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { useSelector } from 'react-redux';
 import './MovieContainer2018.css';
 import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
+import React, { useState} from "react";
+
+
+
 
 
 
@@ -11,27 +14,34 @@ const MovieContainer2018 = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
   const displayTopMovies2018 = movies.filter(movie => movie.Year === '2018')
-  const [focus, setFocus] = useRoveFocus(displayTopMovies2018.length);
+  const [currentFocus, setCurrentFocus] = useRoveFocus(displayTopMovies2018.length);
+  const [containerNumber] = useState(1);
 
-  const movies2018 = displayTopMovies2018.map((film,index) => {
+
+
+  const movies2018 = displayTopMovies2018.map((film, index) => {
+    
+
     return (
       <MovieCard
         key={film.Title}
+        containerNumber={containerNumber}
+        containerFocus={currentFocus}
         isAFavorite ={favoriteMovies.includes(film)}
-      setFocus={setFocus}
-      index={index}
-      focus={focus === index}
-      character={film.Title}
-      key={index}
-      id= {film.imdbID}
-      Title={film.Title}
-      Poster={film.Poster} 
+        setFocus={setCurrentFocus}
+        index={index}
+        focus={currentFocus.leftRight === index}
+        character={film.Title}
+        key={index}
+        id= {film.imdbID}
+        Title={film.Title}
+        Poster={film.Poster} 
       />
     )
   });
   
   return (
-    <div className='movie-container' index={8}>       
+    <div className='movie-container' >       
       {movies2018}
     </div>
   )

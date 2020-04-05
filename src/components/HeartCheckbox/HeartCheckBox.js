@@ -1,6 +1,7 @@
 import HeartCheckbox from 'react-heart-checkbox';
 import React from 'react';
- 
+
+
 class Heart extends React.Component {
   constructor(props) {
     super(props);
@@ -13,10 +14,8 @@ class Heart extends React.Component {
     this.setState({ checked: !this.state.checked });
   }
  
-    render() {
-      
+    render() {  
     const { checked } = this.state;
- 
     return (
         <div className ='heart-container'>
         {this.props.checked &&
@@ -26,4 +25,5 @@ class Heart extends React.Component {
     );
   }
 }
+
 export default Heart;

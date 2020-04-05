@@ -1,20 +1,42 @@
 import { useCallback, useState, useEffect } from 'react';
 
-const useRoveFocus=(size)=> {
-  const [currentFocus, setCurrentFocus] = useState(0);
+const useRoveFocus=(size, movieContainerState)=> {
+  const [currentFocus, setCurrentFocus] = useState({
+    'leftRight': 0,
+    'upDown': 0,     
+  });
+
 
   const handleKeyDown = useCallback(
     e => {
       if (e.keyCode === 39) {
         e.preventDefault();
-        setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1);
+        if (currentFocus === size - 1) {
+          setCurrentFocus({...currentFocus, leftRight:0})
+        } else {
+          setCurrentFocus({...currentFocus, leftRight: currentFocus.leftRight+1})
+        }
       } else if (e.keyCode === 37) {
         e.preventDefault();
-        setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1);
-      }
-      else if (e.keyCode === 40) {
+        if (currentFocus === 0) {
+          setCurrentFocus({...currentFocus, leftRight:size-1})
+        } else {
+          setCurrentFocus({...currentFocus, leftRight: currentFocus.leftRight-1})
+        }
+      } else if (e.keyCode === 40) {
         e.preventDefault();
-        setCurrentFocus(8);
+        if (currentFocus.upDown === 5) {
+          setCurrentFocus({leftRight:0, upDown:0},)
+        } else {
+          setCurrentFocus({leftRight:0, upDown: currentFocus.upDown+1})
+        }
+      }else if (e.keyCode === 38) {
+        e.preventDefault();
+        if (currentFocus.upDown === 0) {
+          setCurrentFocus({leftRight:0  , upDown:5})
+        } else {
+          setCurrentFocus({leftRight:0, upDown: currentFocus.upDown-1})
+        }
       }
     },
     [size, currentFocus, setCurrentFocus]

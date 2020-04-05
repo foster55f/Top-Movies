@@ -30,6 +30,10 @@
       justify-content: center;
   }
 
+  h1{
+    font-size: 30px;
+  }
+
   h2{
       margin: 5px;
   }
@@ -44,5 +48,16 @@
     flex-direction: column;
     align-items: center;
   }
+
+  p{
+    margin-right: 50px;
+  }
+
+  .top-movie-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
  
 
