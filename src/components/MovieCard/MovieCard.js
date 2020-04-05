@@ -1,5 +1,4 @@
 import './MovieCard.css';
-import { useDispatch, useSelector } from 'react-redux';
 import useFocusOnKeyDown from 'react-focus-onkeydown';
 import React, { useEffect, useRef, useCallback} from "react";
 import { withRouter } from 'react-router-dom';
@@ -7,19 +6,19 @@ import Heart from '../HeartCheckbox/HeartCheckBox';
 
 
 
-const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history, isAFavorite }) => {
-  const dispatch = useDispatch()
+const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history, isAFavorite, containerNumber, containerFocus }) => {
   const ref = useRef(null);
   
   
   // useFocusOnKeyDown(ref);
 
   useEffect(() => {
-    if (focus) {
+      if (containerFocus.upDown===containerNumber && focus ) {
       // Move element into view when it is focused
       ref.current.focus();
     }
-  }, [focus]);
+  }, [focus, containerFocus]);
+
 
   const handleSelect = useCallback(() => {
     history.push(`/movies/${Title}`)
@@ -32,6 +31,7 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
     <div >
       <button className='movie-card' tabIndex="0"
         id={id} 
+        containerNumber={containerNumber}
         tabIndex={focus ? 0 : -1}
         role="button"
         ref={ref}
@@ -42,7 +42,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
       </button>
       <Heart checked={isAFavorite}   />      
     </div>
-    
   )
 }
 

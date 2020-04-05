@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavoriteMovies, removeFavoriteMovies } from '../../actioncreators';
-import EscapeListen from "../../components/EscapeListen/EscapeListen";
 import './MovieShowPage.css';
 import { withRouter } from 'react-router-dom';
 

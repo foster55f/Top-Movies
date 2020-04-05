@@ -48,7 +48,7 @@ const App = () => {
           <div className='movies2018'>
               <MovieContainer2018 />
           </div>
-          <div className='header'>
+          {/* <div className='header'>
               <h1>Mystery/Drama</h1>
           </div>
           <div className='actionMovies'>
@@ -79,14 +79,14 @@ const App = () => {
           </div>
             <div className='favoriteMovies'>
               <FavoritesContainer />
-            </div>
+            </div> 
             </>
-          }
-        </>
+          } */}
+        </> 
       )
     }}
   />  
-      {movies && <Route
+      {/* {movies && <Route
         exact path="/movies/:movie" render={({ match }) => {
           let movie = movies.find(movie => movie.Title === match.params.movie)
           return movie &&
@@ -94,7 +94,7 @@ const App = () => {
               <MovieShowPage movie={movie} />
             </>
         }} />
-      }
+      } */}
     </>
   );
 }
