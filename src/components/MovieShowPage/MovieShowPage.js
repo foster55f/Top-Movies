@@ -42,7 +42,7 @@ const MovieShowPage = (props) => {
           <div className='top-movie-details'>
             <h1>{props.movie.Title}</h1>
             
-            <h2>{props.movie.imdbRating}*</h2>
+            <h2>{props.movie.imdbRating}&#9733;</h2>
           <div className ='movie-details'>
             <h2>{props.movie.Genre}</h2>
             <h2>{props.movie.Year}</h2>
