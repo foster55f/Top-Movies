@@ -17,8 +17,8 @@ const MovieShowPage = (props) => {
   useEffect(() => {
     const handleKeyPress = (event) => {
       setCurrentKey(event.keyCode);
-      if(event.keyCode === 27) {
-        props.history.push("/")
+      if (event.keyCode === 27) {
+        props.history.goBack()
       }
       if (event.keyCode === 13 && !favoriteMovies.includes(props.movie)) {
         setFavorite(true)
