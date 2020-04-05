@@ -1,8 +1,9 @@
-import React from 'react';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { useSelector } from 'react-redux';
 import './FavoritesContainer.css';
 import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
+import React, { useState} from "react";
+
 
 
 
@@ -10,11 +11,15 @@ import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
 const FavoritesContainer = () => {
   const { favoriteMovies } = useSelector(state => state);
   const [currentFocus, setCurrentFocus] = useRoveFocus(favoriteMovies.length);
+  const [containerNumber] = useState(6);
+
 
   const favorites = favoriteMovies.map((film,index) => {
     return (
       <MovieCard
-      key={film.Title}
+        key={film.Title}
+        containerNumber={containerNumber}
+        containerFocus={currentFocus}
       setFocus={setCurrentFocus}
       index={index}
       focus={currentFocus.leftRight === index}
