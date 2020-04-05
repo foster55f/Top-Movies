@@ -2,7 +2,8 @@ import MovieCard from '../../components/MovieCard/MovieCard';
 import { useSelector } from 'react-redux';
 import './MysteryDramaContainer.css';
 import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
-import React from "react";
+import React, { useState} from "react";
+
 
 
 
@@ -12,6 +13,9 @@ const MysteryDramaContainer = () => {
   const { favoriteMovies } = useSelector(state => state);
   const displayMysteryDramaMovies = movies.filter(movie => movie.Genre.indexOf("Mystery") != -1 && movie.Genre.indexOf("Drama") != -1);
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayMysteryDramaMovies.length);
+  const [containerNumber] = useState(2);
+
+
 
 
   
@@ -19,6 +23,8 @@ const MysteryDramaContainer = () => {
     return (
       <MovieCard
         key={film.Title}
+        containerNumber={containerNumber}
+        containerFocus={currentFocus}
         isAFavorite ={favoriteMovies.includes(film)}        
       setFocus={setCurrentFocus}
       index={index}

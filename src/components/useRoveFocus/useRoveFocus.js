@@ -25,17 +25,17 @@ const useRoveFocus=(size, movieContainerState)=> {
         }
       } else if (e.keyCode === 40) {
         e.preventDefault();
-        if (currentFocus.upDown === 1) {
-          setCurrentFocus({...currentFocus, upDown:0})
+        if (currentFocus.upDown === 5) {
+          setCurrentFocus({leftRight:0, upDown:0},)
         } else {
-          setCurrentFocus({...currentFocus, upDown: currentFocus.upDown+1})
+          setCurrentFocus({leftRight:0, upDown: currentFocus.upDown+1})
         }
       }else if (e.keyCode === 38) {
         e.preventDefault();
         if (currentFocus.upDown === 0) {
-          setCurrentFocus({...currentFocus, upDown:1})
+          setCurrentFocus({leftRight:0  , upDown:5})
         } else {
-          setCurrentFocus({...currentFocus, upDown: currentFocus.upDown-1})
+          setCurrentFocus({leftRight:0, upDown: currentFocus.upDown-1})
         }
       }
     },
