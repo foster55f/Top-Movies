@@ -63,9 +63,9 @@ const MovieShowPage = (props) => {
             </div>
             <h3>Plot</h3>
             <p>{props.movie.Plot}</p>  
-            <h3>Directed By</h3>
+            <h3>Directed by:</h3>
             <p>{props.movie.Director}</p>    
-            <h3>Production</h3>
+            <h3>Production:</h3>
             <p>{props.movie.Production}</p>    
           <h3>Starring</h3>
           <div>

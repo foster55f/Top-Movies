@@ -26,7 +26,7 @@ You will also see any lint errors in the console.
 
 
 ## Working Demo:
-### Login:
+![Home Page](https://user-images.githubusercontent.com/50148342/78511498-57adee80-775a-11ea-9be7-7cddfe1905d8.gif)
 
 
 
