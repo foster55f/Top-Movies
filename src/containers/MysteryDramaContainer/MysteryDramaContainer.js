@@ -26,14 +26,13 @@ const MysteryDramaContainer = () => {
         containernumber={containernumber}
         containerFocus={currentFocus}
         isAFavorite ={favoriteMovies.includes(film)}        
-      setFocus={setCurrentFocus}
-      index={index}
-      focus={currentFocus.leftRight === index}
-      character={film.Title}
-      key={index}
-      id= {film.imdbID}
-      Title={film.Title}
-      Poster={film.Poster} 
+        setFocus={setCurrentFocus}
+        index={index}
+        focus={currentFocus.leftRight === index}
+        character={film.Title}
+        id= {film.imdbID}
+        Title={film.Title}
+        Poster={film.Poster} 
       />
     )
   });

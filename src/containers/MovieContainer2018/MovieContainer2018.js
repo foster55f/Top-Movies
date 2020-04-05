@@ -32,7 +32,6 @@ const MovieContainer2018 = () => {
         index={index}
         focus={currentFocus.leftRight === index}
         character={film.Title}
-        key={index}
         id= {film.imdbID}
         Title={film.Title}
         Poster={film.Poster} 

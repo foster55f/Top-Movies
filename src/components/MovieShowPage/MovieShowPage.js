@@ -17,8 +17,8 @@ const MovieShowPage = (props) => {
   useEffect(() => {
     const handleKeyPress = (event) => {
       setCurrentKey(event.keyCode);
-      if(event.keyCode === 27) {
-        props.history.push("/")
+      if (event.keyCode === 27) {
+        props.history.goBack()
       }
       if (event.keyCode === 13 && !favoriteMovies.includes(props.movie)) {
         setFavorite(true)
@@ -40,7 +40,9 @@ const MovieShowPage = (props) => {
         <div className='movie-poster' style={{backgroundImage: `url(${props.movie.Poster})`}}/>
         <div className='movie-detail-container'>
           <div className='top-movie-details'>
-        <h1>{props.movie.Title}</h1>
+            <h1>{props.movie.Title}</h1>
+            
+            <h2>{props.movie.imdbRating}&#9733;</h2>
           <div className ='movie-details'>
             <h2>{props.movie.Genre}</h2>
             <h2>{props.movie.Year}</h2>
