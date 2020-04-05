@@ -6,8 +6,9 @@ This is an app where users can browse for top movies for the past couple years a
 
 
 ## Setup:
-In the project directory, you can run:
+git clone [top-movies-api](https://github.com/foster55f/top-movies-api) and follow setup instructions
 
+git clone this project directory and npm install, then run:
 ### `npm start`
 
 Runs the app in the development mode.<br />
