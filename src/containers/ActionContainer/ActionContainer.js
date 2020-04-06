@@ -6,20 +6,12 @@ import React, { useState} from "react";
 
 
 
-
-
-
-
-
 const ActionContainer = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
   const displayActionMovies = movies.filter(movie => movie.Genre.indexOf("Action") != -1);
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayActionMovies.length);
   const [containernumber] = useState(3);
-
-  
-
 
 
   const actionMovies = displayActionMovies.map((film,index) => {

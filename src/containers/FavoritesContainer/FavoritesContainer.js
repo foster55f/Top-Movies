@@ -6,8 +6,6 @@ import React, { useState} from "react";
 
 
 
-
-
 const FavoritesContainer = () => {
   const { favoriteMovies } = useSelector(state => state);
   const [currentFocus, setCurrentFocus] = useRoveFocus(favoriteMovies.length);

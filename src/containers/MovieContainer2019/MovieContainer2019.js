@@ -6,8 +6,6 @@ import React, { useState } from "react";
 
 
 
-
-
 const MovieContainer2019 = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
@@ -16,8 +14,6 @@ const MovieContainer2019 = () => {
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayTopMovies2019.length);
 
 
-
- 
   const movies2019 = displayTopMovies2019.map((film, index) => {
     return (
       <MovieCard
@@ -38,9 +34,7 @@ const MovieContainer2019 = () => {
   });
   
   return (
-    <div className='movie-container'
-   
-    >       
+    <div className='movie-container'>       
       {movies2019}
     </div>
   )
