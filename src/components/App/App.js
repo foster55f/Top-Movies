@@ -51,25 +51,25 @@ const App = () => {
           <div className='header'>
               <h1>Mystery/Drama</h1>
           </div>
-          <div className='actionMovies'>
+          <div className='mystery-drama-movies'>
               <MysteryDramaContainer />
           </div>
           <div className='header'>
               <h1>Action</h1>
           </div>
-          <div className='actionMovies'>
+          <div className='action-movies'>
               <ActionContainer />
           </div>
           <div className='header'>
               <h1>Fantasy</h1>
           </div>
-          <div className='actionMovies'>
+          <div className='fantasy-movies'>
               <FantasyContainer />
           </div>
           <div className='header'>
               <h1>Thriller</h1>
           </div>
-          <div className='actionMovies'>
+          <div className='thriller-movies'>
               <ThrillerContainer />
           </div>
           {favoriteMovies.length > 0 &&
@@ -77,7 +77,7 @@ const App = () => {
           <div className='header'>
               <h1>Your Favorites</h1>
           </div>
-            <div className='favoriteMovies'>
+            <div className='favorite-movies'>
               <FavoritesContainer />
             </div> 
             </>
