@@ -6,9 +6,6 @@ import React, { useState} from "react";
 
 
 
-
-
-
 const FantasyContainer = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
@@ -16,8 +13,7 @@ const FantasyContainer = () => {
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayFantasyMovies.length);
   const [containernumber] = useState(4);
 
-
-
+  
   const fantasyMovies = displayFantasyMovies.map((film,index) => {
     return (
       <MovieCard

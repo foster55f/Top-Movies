@@ -1,5 +1,4 @@
 import './MovieCard.css';
-import useFocusOnKeyDown from 'react-focus-onkeydown';
 import React, { useEffect, useRef, useCallback} from "react";
 import { withRouter } from 'react-router-dom';
 import Heart from '../HeartCheckbox/HeartCheckBox';
@@ -10,11 +9,8 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
   const ref = useRef(null);
   
   
-  // useFocusOnKeyDown(ref);
-
   useEffect(() => {
       if (containerFocus.upDown===containernumber && focus ) {
-      // Move element into view when it is focused
       ref.current.focus();
     }
   }, [focus, containerFocus]);
@@ -22,7 +18,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
 
   const handleSelect = useCallback(() => {
     history.push(`/movies/${Title}`)
-    // setting focus to that element when it is selected
     setFocus(index);
   }, [character, index, setFocus]);
 

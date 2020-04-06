@@ -6,10 +6,6 @@ import React, { useState} from "react";
 
 
 
-
-
-
-
 const MovieContainer2018 = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
@@ -18,10 +14,7 @@ const MovieContainer2018 = () => {
   const [containernumber] = useState(1);
 
 
-
   const movies2018 = displayTopMovies2018.map((film, index) => {
-    
-
     return (
       <MovieCard
         key={film.Title}

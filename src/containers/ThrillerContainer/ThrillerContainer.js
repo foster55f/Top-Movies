@@ -6,8 +6,6 @@ import React, { useState} from "react";
 
 
 
-
-
 const ThrillerContainer = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
@@ -15,8 +13,6 @@ const ThrillerContainer = () => {
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayThrillerMovies.length);
   const [containernumber] = useState(5);
 
-
- 
 
   const thrillerMovies = displayThrillerMovies.map((film,index) => {
     return (

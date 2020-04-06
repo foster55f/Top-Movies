@@ -10,7 +10,7 @@ class Heart extends React.Component {
     };
   }
  
-    onClick = (evnet, props) => {
+    onClick = () => {
     this.setState({ checked: !this.state.checked });
   }
  
