@@ -47,12 +47,10 @@ const MovieShowPage = (props) => {
             <h2>Rating: {props.movie.Rated}</h2>
           {!hasBeenFavorited &&
             <button id={props.movie.Title}
-              onKeyPress={event => this.handleKeyPress(event)}
             >Add Favorite</button>
           }
           {hasBeenFavorited &&
             <button id={props.movie.Title}
-              onKeyPress={event => this.handleKeyPress(event)}
             >Remove Favorite</button>
               
             }

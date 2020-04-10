@@ -18,7 +18,7 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
 
   const handleSelect = useCallback(() => {
     history.push(`/movies/${Title}`)
-    setFocus(index);
+    // setFocus(index);
   }, [character, index, setFocus]);
 
 
