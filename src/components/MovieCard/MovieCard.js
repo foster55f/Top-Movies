@@ -16,8 +16,10 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
   }, [focus, containerFocus]);
 
 
-  const handleSelect = useCallback(() => {
-    history.push(`/movies/${Title}`)
+  const handleKeyPress = useCallback((event) => {
+    if(event.key === 'Enter'){
+      history.push(`/movies/${Title}`)
+    }
     // setFocus(index);
   }, [character, index, setFocus]);
 
@@ -30,8 +32,8 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
         tabIndex={focus ? 0 : -1}
         role="button"
         ref={ref}
-        onClick={handleSelect}
-        onKeyPress={handleSelect}
+        // onClick={handleSelect}
+        onKeyPress={handleKeyPress}
       >
         <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />        
       </button>
