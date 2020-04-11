@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const MovieShowPage = (props) => {
-  const { movies } = useSelector(state => state);
   const [currentKey, setCurrentKey] = useState(null);
   const { favoriteMovies} = useSelector(state => state);
   const dispatch = useDispatch();
