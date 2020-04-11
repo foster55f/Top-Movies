@@ -10,6 +10,7 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
   
   
   useEffect(() => {
+
       if (containerFocus.upDown===containernumber && focus ) {
       ref.current.focus();
     }
@@ -20,7 +21,9 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
     if(event.key === 'Enter'){
       history.push(`/movies/${Title}`)
     }
-    // setFocus(index);
+    console.log(containernumber)
+    console.log(containerFocus.upDown)
+
   }, [character, index, setFocus]);
 
 
