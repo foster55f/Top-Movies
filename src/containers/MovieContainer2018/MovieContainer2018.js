@@ -7,8 +7,7 @@ import React, { useState} from "react";
 
 
 const MovieContainer2018 = () => {
-  const { movies } = useSelector(state => state);
-  const { favoriteMovies } = useSelector(state => state);
+  const { movies, favoriteMovies } = useSelector(state => state);
   const displayTopMovies2018 = movies.filter(movie => movie.Year === '2018')
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayTopMovies2018.length);
   const [containernumber] = useState(1);
