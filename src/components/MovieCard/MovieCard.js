@@ -21,9 +21,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
     if(event.key === 'Enter'){
       history.push(`/movies/${Title}`)
     }
-    console.log(containernumber)
-    console.log(containerFocus.upDown)
-
   }, [character, index, setFocus]);
 
 
@@ -35,7 +32,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
         tabIndex={focus ? 0 : -1}
         role="button"
         ref={ref}
-        // onClick={handleSelect}
         onKeyPress={handleKeyPress}
       >
         <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />        

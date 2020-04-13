@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const MovieShowPage = (props) => {
-  console.log(props)
   const { favoriteMovies} = useSelector(state => state);
   const dispatch = useDispatch();
   const isAFavorite = favoriteMovies.find(film => film.imdbID === props.movie.imdbID);

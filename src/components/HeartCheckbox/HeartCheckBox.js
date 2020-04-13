@@ -15,7 +15,6 @@ class Heart extends React.Component {
   }
  
     render() {  
-    const { checked } = this.state;
     return (
         <div className ='heart-container'>
         {this.props.checked &&
