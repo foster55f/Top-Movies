@@ -13,7 +13,7 @@ const FantasyContainer = () => {
   const [containernumber] = useState(4);
 
   
-  const fantasyMovies = displayFantasyMovies.map((film,index) => {
+  const fantasyMovies = displayFantasyMovies.map((film, index) => {
     return (
       <MovieCard
         key={film.Title}
