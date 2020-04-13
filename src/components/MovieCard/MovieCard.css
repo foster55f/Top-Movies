@@ -25,4 +25,12 @@
     margin-top: -100px;
     margin-right: 50px;
   }
+
+  .heart-checkbox {
+    background-color: red;
+  }
+
+  .heart-checkbox::after {
+    background-color: red;
+  }
   
