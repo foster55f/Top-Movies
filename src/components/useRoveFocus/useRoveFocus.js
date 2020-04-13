@@ -1,13 +1,15 @@
 import { useCallback, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { lastFocus } from '../../reducers/lastFocus';
 
 
 
 const useRoveFocus = (size) => {
-const { favoriteMovies } = useSelector(state => state);  
-  const [currentFocus, setCurrentFocus] = useState({
-    'leftRight': 0,
-    'upDown': 0,     
+  const { favoriteMovies, lastFocus } = useSelector(state => state);
+console.log(lastFocus.leftRight)  
+const [currentFocus, setCurrentFocus] = useState({
+    'leftRight': lastFocus.leftRight,
+    'upDown': lastFocus.upDown,     
   });
 
 

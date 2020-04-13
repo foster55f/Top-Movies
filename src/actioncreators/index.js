@@ -12,3 +12,9 @@ export const removeFavoriteMovies = favoriteMovies => ({
   type: 'REMOVE_MOVIES',
   favoriteMovies
 })
+
+export const rememberLastFocus = (leftRight, upDown) => ({
+  type: 'REMEMBER_FOCUS',
+  leftRight,
+  upDown
+})
