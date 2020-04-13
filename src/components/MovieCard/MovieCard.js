@@ -1,7 +1,7 @@
 import './MovieCard.css';
 import React, { useEffect, useRef, useCallback} from "react";
 import { withRouter } from 'react-router-dom';
-import Heart from '../HeartCheckbox/HeartCheckBox';
+import HeartCheckbox from 'react-heart-checkbox';
 
 
 
@@ -36,7 +36,11 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
       >
         <div id={id} className='movie-img' style={{ backgroundImage: `url(${Poster})` }} />        
       </button>
-      <Heart checked={isAFavorite}   />      
+      <div className ='heart-container'>
+        {isAFavorite &&
+            <HeartCheckbox checked={isAFavorite} />
+        }
+        </div>    
     </div>
   )
 }
