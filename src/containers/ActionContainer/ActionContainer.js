@@ -8,7 +8,7 @@ import React, { useState} from "react";
 
 const ActionContainer = () => {
   const { movies, favoriteMovies } = useSelector(state => state);
-  const displayActionMovies = movies.filter(movie => movie.Genre.indexOf("Action") != -1);
+  const displayActionMovies = movies.filter(movie => movie.Genre.indexOf("Action") !== -1);
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayActionMovies.length);
   const [containernumber] = useState(3);
 
