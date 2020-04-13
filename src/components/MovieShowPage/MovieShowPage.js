@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const MovieShowPage = (props) => {
-  const [currentKey, setCurrentKey] = useState(null);
   const { favoriteMovies} = useSelector(state => state);
   const dispatch = useDispatch();
   const isAFavorite = favoriteMovies.find(film => film.imdbID === props.movie.imdbID);
@@ -15,14 +14,15 @@ const MovieShowPage = (props) => {
 
   useEffect(() => {
     const handleKeyPress = (event) => {
-      setCurrentKey(event.keyCode);
-      if (event.keyCode === 27) {
+      let escapeButton = 27;
+      let enterButton = 13;
+      if (event.keyCode === escapeButton) {
         props.history.goBack()
       }
-      if (event.keyCode === 13 && !favoriteMovies.includes(props.movie)) {
+      if (event.keyCode === enterButton && !favoriteMovies.includes(props.movie)) {
         setFavorite(true)
         dispatch(addFavoriteMovies(props.movie))
-      } else if (event.keyCode === 13 && favoriteMovies.includes(props.movie)) {
+      } else if (event.keyCode === enterButton && favoriteMovies.includes(props.movie)) {
         setFavorite(false)
         dispatch(removeFavoriteMovies(props.movie))
       }
