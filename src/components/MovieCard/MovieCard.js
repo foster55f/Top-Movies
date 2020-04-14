@@ -22,7 +22,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
 
 
   const handleKeyPress = useCallback((event) => {
-    console.log(event.target.id)
     dispatch(rememberLastFocus(parseInt(event.target.id[0]), parseInt(event.target.id[2])))
     if(event.key === 'Enter'){
       history.push(`/movies/${Title}`)
