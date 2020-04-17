@@ -1,5 +1,5 @@
-export const retrieveMovies = () => {
-    return fetch('http://localhost:4000/api/movies')
+export const retrieveMovies = (url) => {
+    return fetch(url)
     .then(response => {
         if (!response.ok) {
           throw Error('Error fetching games');

@@ -6,9 +6,6 @@ import { useDispatch } from 'react-redux';
 import { rememberLastFocus } from '../../actioncreators';
 
 
-
-
-
 const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, history, isAFavorite, containernumber, containerFocus }) => {
   const ref = useRef(null);
   const dispatch = useDispatch()
@@ -27,8 +24,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
       history.push(`/movies/${Title}`)
     }
   }, [character, index, setFocus]);
-
-
 
 
   return (
