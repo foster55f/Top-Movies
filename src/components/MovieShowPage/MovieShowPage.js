@@ -5,7 +5,6 @@ import './MovieShowPage.css';
 import { withRouter } from 'react-router-dom';
 
 
-
 const MovieShowPage = (props) => {
   const { favoriteMovies} = useSelector(state => state);
   const dispatch = useDispatch();

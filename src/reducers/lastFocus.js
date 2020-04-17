@@ -1,4 +1,3 @@
-
 export const lastFocus = (state = { leftRight: 0, upDown: 0 }, action) => {
   switch (action.type) {
     case 'REMEMBER_FOCUS':

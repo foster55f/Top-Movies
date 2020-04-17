@@ -4,7 +4,6 @@ import { favoriteMovies } from './favoriteMovies';
 import { lastFocus } from './lastFocus';
 
 
-
 const rootReducer = combineReducers({
   movies, favoriteMovies, lastFocus
 });

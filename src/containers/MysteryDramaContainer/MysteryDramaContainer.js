@@ -6,7 +6,6 @@ import React, { useState} from "react";
 
 
 
-
 const MysteryDramaContainer = () => {
   const { movies, favoriteMovies } = useSelector(state => state);
   const displayMysteryDramaMovies = movies.filter(movie => movie.Genre.indexOf("Mystery") !== -1 && movie.Genre.indexOf("Drama") != -1);
