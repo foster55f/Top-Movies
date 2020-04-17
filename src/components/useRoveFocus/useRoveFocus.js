@@ -6,7 +6,7 @@ import { lastFocus } from '../../reducers/lastFocus';
 
 const useRoveFocus = (size) => {
   const { favoriteMovies, lastFocus } = useSelector(state => state);
-const [currentFocus, setCurrentFocus] = useState({
+  const [currentFocus, setCurrentFocus] = useState({
     'leftRight': lastFocus.leftRight,
     'upDown': lastFocus.upDown,     
   });
