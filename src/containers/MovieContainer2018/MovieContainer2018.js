@@ -5,13 +5,11 @@ import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
 import React, { useState} from "react";
 
 
-
 const MovieContainer2018 = () => {
   const { movies, favoriteMovies } = useSelector(state => state);
   const displayTopMovies2018 = movies.filter(movie => movie.Year === '2018')
   const [currentFocus, setCurrentFocus] = useRoveFocus(displayTopMovies2018.length);
   const [containernumber] = useState(1);
-
 
   const movies2018 = displayTopMovies2018.map((film, index) => {
     return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavoriteMovies, removeFavoriteMovies } from '../../actioncreators';
 import './MovieShowPage.css';
@@ -28,7 +28,6 @@ const MovieShowPage = (props) => {
       document.removeEventListener('keydown', handleKeyPress);
     };
   });
-
 
     return (
     <div className='movie-show-page'>

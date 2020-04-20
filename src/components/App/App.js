@@ -14,7 +14,6 @@ import FavoritesContainer from '../../containers/FavoritesContainer/FavoritesCon
 import MovieShowPage from '../MovieShowPage/MovieShowPage';
 
 
-
 const App = () => {
   const dispatch = useDispatch();
   const { movies } = useSelector(state => state);
