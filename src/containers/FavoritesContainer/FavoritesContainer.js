@@ -5,12 +5,10 @@ import useRoveFocus from "../../components/useRoveFocus/useRoveFocus";
 import React, { useState} from "react";
 
 
-
 const FavoritesContainer = () => {
   const { favoriteMovies } = useSelector(state => state);
   const [currentFocus, setCurrentFocus] = useRoveFocus(favoriteMovies.length);
   const [containernumber] = useState(6);
-
 
   const favorites = favoriteMovies.map((film,index) => {
     return (

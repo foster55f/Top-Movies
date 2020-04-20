@@ -10,7 +10,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
   const ref = useRef(null);
   const dispatch = useDispatch()
   
-  
   useEffect(() => {
       if (containerFocus.upDown===containernumber && focus ) {
       ref.current.focus();
@@ -24,7 +23,6 @@ const MovieCard = ({ id, Title, Poster, character, focus, index, setFocus, histo
       history.push(`/movies/${Title}`)
     }
   }, [character, index, setFocus]);
-
 
   return (
     <div >

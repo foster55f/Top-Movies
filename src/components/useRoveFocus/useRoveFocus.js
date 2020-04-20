@@ -1,7 +1,5 @@
 import { useCallback, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { lastFocus } from '../../reducers/lastFocus';
-
 
 
 const useRoveFocus = (size) => {
@@ -10,7 +8,6 @@ const useRoveFocus = (size) => {
     'leftRight': lastFocus.leftRight,
     'upDown': lastFocus.upDown,     
   });
-
 
   const handleKeyDown = useCallback(
     e => {
