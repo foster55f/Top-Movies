@@ -15,6 +15,7 @@ const useRoveFocus = (size) => {
       let lefttArrow = 37;
       let downArrow = 40;
       let upArrow = 38;
+  
       if (e.keyCode === rightArrow) {
         e.preventDefault();
         if (currentFocus.leftRight === size - 1) {
@@ -31,7 +32,7 @@ const useRoveFocus = (size) => {
         }
       } else if (e.keyCode === downArrow) {
         e.preventDefault();
-        if(favoriteMovies.length > 0 && currentFocus.upDown===6 || favoriteMovies.length === 0 && currentFocus.upDown === 5 ) {
+        if(favoriteMovies.length > 0 && currentFocus.upDown===6 || favoriteMovies.length === 0 && currentFocus.upDown === 5 || currentFocus.leftRight === 0 && currentFocus.upDown === 6 ) {
           setCurrentFocus({leftRight:0, upDown:0},)
         } else {
           setCurrentFocus({leftRight:0, upDown: currentFocus.upDown+1})
