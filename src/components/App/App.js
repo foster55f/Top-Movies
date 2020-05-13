@@ -21,7 +21,7 @@ const App = () => {
 
 
   useEffect(() => {
-    retrieveMovies('http://localhost:4000/api/movies')
+    retrieveMovies('https://obscure-brushlands-93124.herokuapp.com/api/movies')
       .then(movies => {
         dispatch(addMovies(movies))
     })
