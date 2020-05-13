@@ -24,8 +24,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "prod": "NODE_ENV=production node server.js",
-    "postinstall": "webpack -p",
     "build": "react-scripts build",
     "s-test": "mocha test  --timeout 15000",
     "eject": "react-scripts eject"
