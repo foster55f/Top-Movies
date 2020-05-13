@@ -15,13 +15,14 @@ import MovieShowPage from '../MovieShowPage/MovieShowPage';
 
 
 const App = () => {
+  console.log(process.env.PORT)
   const dispatch = useDispatch();
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
 
 
   useEffect(() => {
-    retrieveMovies('https://obscure-brushlands-93124.herokuapp.com/api/movies')
+    retrieveMovies(process.env.REACT_APP_BACKEND_URL)
       .then(movies => {
         dispatch(addMovies(movies))
     })
