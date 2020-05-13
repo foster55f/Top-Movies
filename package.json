@@ -10,6 +10,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "arrow-keys-react": "^1.0.6",
+    "expect.js": "^0.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-focus-onkeydown": "^3.0.1",
@@ -18,12 +19,13 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "selenium-webdriver": "^4.0.0-alpha.7"
   },
   "scripts": {
     "start": "node index.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "s-test": "mocha test  --timeout 15000",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,5 +42,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.9.6",
+    "babel-preset-react-app-babel-7": "^4.0.2-0",
+    "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "cheerio": "^1.0.0-rc.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "mocha": "^7.1.2"
   }
 }
