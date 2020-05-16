@@ -1,7 +1,7 @@
 # Top Movies APP
 
 ## Production Site
-![Top Movies Site](https://limitless-bastion-36006.herokuapp.com/)
+[Top Movies Site](https://limitless-bastion-36006.herokuapp.com/)
 
 ## Project Overview:
 
