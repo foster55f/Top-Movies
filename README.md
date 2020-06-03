@@ -1,5 +1,7 @@
 # Top Movies APP
 
+by  [Foster Taylor](https://github.com/foster55f)
+
 ## Production Site
 [Top Movies Site](https://limitless-bastion-36006.herokuapp.com/)
 
