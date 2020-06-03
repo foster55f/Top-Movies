@@ -71,7 +71,4 @@ You will also see any lint errors in the console.
 
 ![MovieShowPage](https://user-images.githubusercontent.com/50148342/78511821-cd1abe80-775c-11ea-8456-988e4776e832.gif)
 
-### GitHub:
-
-[Foster Taylor](https://github.com/foster55f/)
 
